@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071521">
+<meta name="description" content="Berat Kaylesiz — Minecraft projeleri, modlar ve indirmeler.">
+<title>Berat Kaylesiz | Minecraft</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&display=swap');
+:root{--bg:#071521;--panel:#0c2230;--panel2:#102d3a;--cyan:#61f2d1;--blue:#6cc9ff;--text:#e9f8f5;--muted:#9ab8bb;--line:rgba(127,235,218,.17)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Rajdhani,Arial,sans-serif;font-size:19px;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 15% 15%,#103e4b 0,transparent 34%),radial-gradient(ellipse at 85% 65%,#12334c 0,transparent 38%),linear-gradient(180deg,#06121e,#081b28 60%,#071521)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.15;pointer-events:none;background-image:linear-gradient(rgba(122,232,211,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(122,232,211,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+nav{height:78px;display:flex;align-items:center;justify-content:space-between;position:absolute;top:0;left:0;right:0;z-index:10;padding:0 max(20px,calc((100vw - 1120px)/2));border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(14px);background:rgba(5,17,27,.45)}
+.brand{font:11px 'Press Start 2P';line-height:1.8;color:var(--cyan);text-shadow:0 0 18px #48e8c777}.brand span{color:#fff}
+.navlinks{display:flex;gap:30px}.navlinks a{font-weight:700;letter-spacing:1px;color:#c3dcdb;transition:.25s}.navlinks a:hover{color:var(--cyan);transform:translateY(-2px)}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:8px 12px}
+.hero{min-height:780px;display:flex;align-items:center;position:relative;overflow:hidden;padding:130px 0 95px}
+.hero-content{position:relative;z-index:2;max-width:760px}.eyebrow{color:var(--cyan);font-weight:700;letter-spacing:5px;text-transform:uppercase;font-size:14px;display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";width:35px;height:2px;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(45px,8vw,94px);line-height:.92;margin:26px 0 24px;font-weight:700;letter-spacing:-2px}h1 strong{color:var(--cyan);display:block;text-shadow:0 0 38px #4df0cd38}
+.hero p{color:#b0c9cc;font-size:23px;line-height:1.45;max-width:590px;margin-bottom:34px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:8px;font-weight:700;letter-spacing:1px;border:1px solid var(--cyan);transition:.25s;cursor:pointer}.btn.primary{background:var(--cyan);color:#06202a;box-shadow:0 8px 30px #61f2d12a}.btn.secondary{color:var(--text);background:#ffffff08;border-color:#a5c9c644}.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px #61f2d12b}
+.hero-art{position:absolute;right:-40px;bottom:0;width:54%;height:80%;pointer-events:none;opacity:.95}
+.moon{position:absolute;right:18%;top:8%;width:120px;height:120px;border-radius:50%;background:#a0f8e5;box-shadow:0 0 80px #61f2d166;opacity:.65}
+.pixel-sky{position:absolute;inset:0;background:linear-gradient(transparent 45%,#071521 95%),radial-gradient(ellipse at 50% 55%,#1c5960 0,transparent 45%)}
+.mountain{position:absolute;bottom:0;left:0;width:100%;height:60%;background:#0b2933;clip-path:polygon(0 70%,12% 70%,12% 50%,22% 50%,22% 32%,34% 32%,34% 18%,47% 18%,47% 35%,58% 35%,58% 56%,72% 56%,72% 40%,82% 40%,82% 62%,100% 62%,100% 100%,0 100%);filter:drop-shadow(0 -8px 0 #16444a)}
+.ground{position:absolute;bottom:0;left:0;width:100%;height:18%;background:repeating-linear-gradient(90deg,#164c42 0 45px,#1c5a4b 45px 90px);border-top:10px solid #367e59;box-shadow:0 -12px 35px #40d69a20}
+.block{position:absolute;width:62px;height:62px;background:#1d514c;border:2px solid #398477;box-shadow:inset 0 0 0 8px #ffffff08,0 12px 22px #0005;animation:float 5s ease-in-out infinite}.block:before{content:"";position:absolute;inset:0 0 auto;height:14px;background:#5b9a65;border-bottom:2px solid #367e59}.b1{right:22%;bottom:17%;transform:rotate(8deg)}.b2{right:7%;bottom:24%;width:40px;height:40px;animation-delay:-2s}.b3{left:15%;bottom:23%;width:48px;height:48px;animation-delay:-3s}
+.axo{position:absolute;font-size:58px;filter:drop-shadow(0 8px 8px #0007);animation:swim 6s ease-in-out infinite;z-index:2}.axo.a1{right:13%;top:34%}.axo.a2{right:53%;top:58%;font-size:39px;animation-delay:-2.2s}.axo.a3{right:4%;top:65%;font-size:31px;animation-delay:-4s}
+.particle{position:absolute;width:4px;height:4px;background:#9dffe9;border-radius:50%;box-shadow:0 0 12px #61f2d1;animation:rise 8s linear infinite;opacity:0}.particle:nth-child(1){left:10%;bottom:5%;animation-delay:0s}.particle:nth-child(2){left:40%;bottom:0;animation-delay:2s}.particle:nth-child(3){left:70%;bottom:8%;animation-delay:4s}.particle:nth-child(4){left:85%;bottom:0;animation-delay:6s}
+@keyframes float{50%{translate:0 -15px}}@keyframes swim{0%,100%{transform:translate(0,0) rotate(-5deg)}50%{transform:translate(-20px,-17px) rotate(5deg)}}@keyframes rise{0%{transform:translateY(0) scale(.5);opacity:0}20%{opacity:.8}100%{transform:translateY(-650px) scale(1.2);opacity:0}}
+section{padding:100px 0;position:relative}.section-head{margin-bottom:42px}.kicker{font-size:13px;color:var(--cyan);font-weight:700;letter-spacing:4px;text-transform:uppercase}.section-head h2{font-size:clamp(34px,5vw,55px);margin:10px 0;font-weight:700}.section-head p{color:var(--muted);max-width:620px;margin:0;font-size:20px}
+.divider{height:100px;position:relative;overflow:hidden;background:linear-gradient(180deg,#0a202b,#103d42 50%,#0a202b);clip-path:polygon(0 15%,10% 15%,10% 0,24% 0,24% 22%,39% 22%,39% 7%,57% 7%,57% 27%,74% 27%,74% 5%,88% 5%,88% 18%,100% 18%,100% 100%,0 100%);border-top:2px solid #61f2d13d;border-bottom:2px solid #61f2d126}.divider:after{content:"BERAT KAYLESİZ  ✦  MINECRAFT";position:absolute;inset:0;display:grid;place-items:center;font:clamp(13px,2vw,20px) 'Press Start 2P';letter-spacing:2px;color:#b6fff0;text-shadow:0 0 20px #61f2d1;animation:glow 3s ease-in-out infinite alternate}@keyframes glow{to{text-shadow:0 0 28px #61f2d1,0 0 55px #61f2d188}}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{position:relative;background:linear-gradient(145deg,#102c3a,#0a1e2a);border:1px solid var(--line);border-radius:14px;padding:25px;overflow:hidden;transition:.3s;box-shadow:0 14px 45px #0002}.card:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:translateX(-100%);transition:.5s}.card:hover{transform:translateY(-7px);border-color:#61f2d15c;box-shadow:0 20px 45px #0004}.card:hover:before{transform:translateX(0)}.card-icon{width:54px;height:54px;border-radius:12px;display:grid;place-items:center;background:#61f2d117;color:var(--cyan);font-size:28px;margin-bottom:20px}.card h3{font-size:25px;margin:0 0 8px}.card p{color:var(--muted);line-height:1.45;margin:0 0 22px;font-size:18px}.card .btn{padding:10px 16px;font-size:15px}.tag{font-size:12px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:block}
+.news{display:grid;grid-template-columns:1fr 1fr;gap:20px}.news .card{min-height:230px}.news-date{font-size:13px;color:#83a9af;letter-spacing:2px;margin-bottom:12px;display:block}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about-visual{min-height:300px;border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;background:radial-gradient(ellipse,#164c50,#0b2430 65%);position:relative;overflow:hidden}.big-axo{font-size:130px;filter:drop-shadow(0 20px 20px #0006);animation:swim 5s ease-in-out infinite}.about-visual:after{content:"";position:absolute;bottom:0;left:0;right:0;height:28px;background:repeating-linear-gradient(90deg,#245a49 0 35px,#316d53 35px 70px);border-top:7px solid #4d9664}.about-copy p{color:var(--muted);font-size:20px;line-height:1.55}.stats{display:flex;gap:25px;margin-top:24px;flex-wrap:wrap}.stat strong{display:block;color:var(--cyan);font-size:25px}.stat span{font-size:14px;color:var(--muted);letter-spacing:1px}
+.contact{background:linear-gradient(120deg,#0b2734,#0c1d2b);border:1px solid var(--line);border-radius:18px;padding:35px;display:flex;align-items:center;justify-content:space-between;gap:25px}.contact p{color:var(--muted);margin:5px 0}.contact h3{font-size:28px;margin:0}
+footer{padding:28px 0;border-top:1px solid var(--line);color:#79979e;font-size:15px}.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:760px){nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:20px;background:#071923;flex-direction:column;gap:15px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.hero{min-height:730px}.hero-art{width:100%;height:50%;right:-15%;opacity:.55}.hero-content{padding-top:30px}.hero p{font-size:20px}.cards{grid-template-columns:1fr}.news{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:25px}.about-visual{min-height:230px}.contact{align-items:flex-start;flex-direction:column}.divider{height:80px}.wrap{width:min(100% - 32px,1120px)}section{padding:75px 0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="#home">BK<span>.</span></a>
+  <button class="menu" aria-label="Menüyü aç" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+  <div class="navlinks">
+    <a href="#minecraft">MINECRAFT</a><a href="#about">HAKKIMDA</a><a href="#contact">İLETİŞİM</a>
+  </div>
+</nav>
+<header class="hero" id="home">
+  <div class="hero-art" aria-hidden="true"><div class="moon"></div><div class="pixel-sky"></div><div class="mountain"></div><div class="ground"></div><i class="block b1"></i><i class="block b2"></i><i class="block b3"></i><span class="axo a1">🩷</span><span class="axo a2">🦎</span><span class="axo a3">🩷</span>
+    <i class="particle"></i><i class="particle"></i><i class="particle"></i><i class="particle"></i></div>
+  <div class="wrap"><div class="hero-content reveal">
+    <div class="eyebrow">DİJİTAL DÜNYAMA HOŞ GELDİN</div>
+    <h1>BERAT <strong>KAYLESİZ</strong></h1>
+    <p>Minecraft dünyam, projelerim ve paylaştığım içerikler burada. Yeni maceralara hazır mısın?</p>
+    <div class="actions"><a class="btn primary" href="#minecraft">⛏ Keşfet <span>↗</span></a><a class="btn secondary" href="#about">Hakkımda</a></div>
+  </div></div>
+</header>
+<div class="divider" aria-label="Berat Kaylesiz Minecraft"></div>
+<main>
+<section id="minecraft"><div class="wrap">
+  <div class="section-head reveal"><span class="kicker">BLOK BLOK YENİLİK</span><h2>Minecraft</h2><p>İndirmeler, dosyalar ve Minecraft maceralarım. İhtiyacın olanı seç, dünyana ekle.</p></div>
+  <div class="cards">
+    <article class="card reveal"><div class="card-icon">📦</div><span class="tag">İNDİRME / DOSYA</span><h3>Dosya Adı</h3><p>Bu alana dosyanın ne işe yaradığını anlatan kısa bir açıklama ekle. Sürüm ve kurulum notlarını da yazabilirsin.</p><a class="btn primary" href="downloads/ornek-dosya.zip" download>⬇ İndir</a></article>
+    <article class="card reveal"><div class="card-icon">🧱</div><span class="tag">PROJE</span><h3>Minecraft Projem</h3><p>Sunucu, harita veya kaynak paketi gibi projelerinden birini tanıt. Ziyaretçilerin neler bulacağını açıkla.</p><a class="btn secondary" href="#mods">Detayları gör ↗</a></article>
+    <article class="card reveal"><div class="card-icon">⚒️</div><span class="tag">REHBER</span><h3>Kurulum Rehberi</h3><p>Dosyaları nasıl kuracaklarını anlatan bir rehber veya önemli bir bilgilendirme için bu alanı kullan.</p><a class="btn secondary" href="#contact">Sorun mu var?</a></article>
+  </div>
+</div></section>
+<div class="divider"></div>
+<section id="mods"><div class="wrap">
+  <div class="section-head reveal"><span class="kicker">TOPLULUKTAN HABERLER</span><h2>Modlar & Güncellemeler</h2><p>Yeni modlar, sürüm notları ve duyurular. Aşağıdaki örnek içerikleri kendi haberlerinle değiştirebilirsin.</p></div>
+  <div class="news">
+    <article class="card reveal"><span class="news-date">DUYURU • 01.10.2026</span><span class="tag">MOD TANITIMI</span><h3>Macera Başlıyor!</h3><p>Bu modun özelliklerini, eklediği yenilikleri ve hangi Minecraft sürümüyle uyumlu olduğunu buraya yaz.</p><a class="btn primary" href="downloads/mod-1.jar" download>⬇ Modu İndir</a></article>
+    <article class="card reveal"><span class="news-date">GÜNCELLEME • 01.10.2026</span><span class="tag">SÜRÜM NOTLARI</span><h3>Yeni Güncelleme</h3><p>Güncellemede gelen değişiklikleri, hata düzeltmelerini ve kurulum talimatlarını bu metinle paylaş.</p><a class="btn primary" href="downloads/mod-2.jar" download>⬇ Güncellemeyi İndir</a></article>
+    <article class="card reveal"><span class="news-date">PAYLAŞIM • 01.10.2026</span><span class="tag">HARİTA</span><h3>Yeni Bir Dünya</h3><p>Haritanın temasını, keşfedilecek yerleri ve önerilen oyun modunu tanıtmak için kullanabileceğin örnek yazı.</p><a class="btn primary" href="downloads/harita.zip" download>⬇ Haritayı İndir</a></article>
+    <article class="card reveal"><span class="news-date">DUYURU • 01.10.2026</span><span class="tag">KAYNAK PAKETİ</span><h3>Bloklara Yeni Görünüm</h3><p>Kaynak paketinin görsel tarzını, çözünürlüğünü ve desteklediği sürümleri burada duyurabilirsin.</p><a class="btn primary" href="downloads/kaynak-paketi.zip" download>⬇ Paketi İndir</a></article>
+  </div>
+</div></section>
+<div class="divider"></div>
+<section id="about"><div class="wrap about-grid">
+  <div class="about-visual reveal"><span class="big-axo">🦎</span></div>
+  <div class="about-copy reveal"><span class="kicker">BLOKLARIN ARDINDAKİ KİŞİ</span><h2>Hakkımda</h2><p>Merhaba! Ben Berat Kaylesiz. Minecraft, teknoloji ve dijital projelerle ilgileniyorum. Bu siteyi çalışmalarımı, indirmeleri ve yeni gelişmeleri tek bir yerde paylaşmak için hazırladım.</p><p>Buradaki metni kendini tanıtacak şekilde değiştirebilir; ilgi alanlarını, projelerini ve hedeflerini ekleyebilirsin.</p><div class="stats"><div class="stat"><strong>⛏</strong><span>YARATICILIK</span></div><div class="stat"><strong>◇</strong><span>KEŞİF</span></div><div class="stat"><strong>∞</strong><span>YENİ FİKİRLER</span></div></div></div>
+</div></section>
+<section id="contact"><div class="wrap"><div class="section-head reveal"><span class="kicker">BİR MESAJ KADAR YAKIN</span><h2>İletişim</h2><p>Bir fikrin, sorun veya iş birliği önerin mi var? Bana ulaşabilirsin.</p></div>
+  <div class="contact reveal"><div><h3>Birlikte bir şeyler üretelim.</h3><p>E-posta veya sosyal medya bağlantılarını buraya ekle.</p></div><a class="btn primary" href="mailto:berat@example.com">✉ E-posta Gönder</a></div>
+</div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 Berat Kaylesiz</span><span>Crafted with <span style="color:#61f2d1">◆</span> & Minecraft vibes</span><a href="#home">Yukarı çık ↑</a></div></footer>
+<script>
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open')));
+</script>
+</body></html>
